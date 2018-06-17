@@ -1,4 +1,8 @@
 
+terraform {
+  required_version = ">= 0.12.0"
+}
+
 locals {
   records = concat([
     for rs in var.recordsets : [
