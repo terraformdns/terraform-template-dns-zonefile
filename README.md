@@ -28,6 +28,14 @@ output "zonefile" {
 }
 ```
 
+With the above configuration, the output `zonefile` would have the following
+value:
+
+```
+foo 300 IN A 1.2.3.4
+foo 300 IN A 5.6.7.8
+```
+
 ## Compatibility
 
 When using this module, always use a version constraint that constraints to at
