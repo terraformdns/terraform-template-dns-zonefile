@@ -4,7 +4,7 @@ terraform {
 }
 
 locals {
-  records = concat([
+  records = flatten(concat([
     for rs in var.recordsets : [
       for r in rs.records : {
         name = rs.name
@@ -13,7 +13,7 @@ locals {
         data = r
       }
     ]
-  ]...)
+  ]))
 
   zonefile = <<EOT
 %{~for k, r in local.records~}
