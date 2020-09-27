@@ -1,10 +1,10 @@
 
 variable "recordsets" {
-  type = list(object({
+  type = set(object({
     name    = string
     type    = string
     ttl     = number
-    records = list(string)
+    records = set(string)
   }))
-  description = "List of DNS recordset objects, in the standard terraformdns structure, to format into a zone file."
+  description = "Set of DNS recordset objects, in the standard terraformdns structure, to format into a zone file."
 }
